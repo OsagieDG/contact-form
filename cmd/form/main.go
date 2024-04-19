@@ -37,28 +37,43 @@ func main() {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "ui/tmpl/index.html")
+	serveFile(w, r, "ui/tmpl/index.html")
+}
+
+func serveFile(w http.ResponseWriter, r *http.Request, filePath string) {
+	file, err := os.Open(filePath)
+	checkError(w, err)
+	defer file.Close()
+
+	fi, err := file.Stat()
+	checkError(w, err)
+
+	http.ServeContent(w, r, fi.Name(), fi.ModTime(), file)
+}
+
+func checkError(w http.ResponseWriter, err error) {
+	if err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		log.Println("Error opening file:", err)
+		return
+	}
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	// Parse form data
 	err := r.ParseForm()
 	if err != nil {
 		http.Error(w, "Error parsing form", http.StatusBadRequest)
 		return
 	}
 
-	// Get form values
 	name := r.FormValue("name")
 	email := r.FormValue("email")
 	phoneNumber := r.FormValue("phonenumber")
 	message := r.FormValue("message")
 
-	// Do something with the form data (e.g., send an email, save to database, etc.)
 	fmt.Printf("Received message from: %s <%s>\n", name, email)
 	fmt.Printf("Phone Number: %s\n", phoneNumber)
 	fmt.Printf("Message: %s\n", message)
 
-	// Send a response back to the client
 	fmt.Fprintf(w, "Message received successfully!")
 }
