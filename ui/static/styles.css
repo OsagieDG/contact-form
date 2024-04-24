@@ -24,7 +24,7 @@ input[type=submit]:hover {
 }
 
 .container {
-  border-radius: 5px;
+  border-radius: 5px; 
   background-color: #f0e68c; 
   padding: 20px;
 }
@@ -35,6 +35,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
+  background-color: #f0e68c; 
 }
 
 .container {
