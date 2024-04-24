@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -23,9 +22,6 @@ func (c *ContactHandler) HandleCreateContact(w http.ResponseWriter, r *http.Requ
 	email := r.FormValue("email")
 	phoneNumber := r.FormValue("phonenumber")
 	message := r.FormValue("message")
-
-	// Inside HandleCreateContact function, before validation
-	fmt.Printf("Received form values - Name: %s, Email: %s, Phone Number: %s, Message: %s\n", name, email, phoneNumber, message)
 
 	if name == "" || email == "" || phoneNumber == "" || message == "" {
 		http.Error(w, "All fields are required", http.StatusBadRequest)
