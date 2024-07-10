@@ -32,6 +32,7 @@ func (c *ContactHandler) HandleCreateContact(w http.ResponseWriter, r *http.Requ
 		http.Error(w, "Failed to send email", http.StatusInternalServerError)
 		return
 	}
-
-	w.Write([]byte("<h2>Message has been sent successfully!</h2>"))
+	w.Write([]byte("<h2>Thanks for reaching out!</h2>"))
+	w.Write([]byte("<h1>Message has been sent successfully!</h1>"))
+	w.Write([]byte("<h2>I will get back to you ASAP</h2>"))
 }
