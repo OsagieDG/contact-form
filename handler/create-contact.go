@@ -33,5 +33,5 @@ func (c *ContactHandler) HandleCreateContact(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	writeJSONResponse(w, http.StatusOK, map[string]string{"message": "Contact has been added successfully"})
+	w.Write([]byte("<h2>Message has been sent successfully!</h2>"))
 }

@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Submission</title>
   <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
 <body>
 
 <div class="container">
-  <h1>Contact Us</h1>
-  <p>Fill up the form below to send us a message.</p>
-  <form action="http://localhost:4000/contact-form" method="post">
+  <h1>Contact Me</h1>
+  <p>Fill up the form below to send a message.</p> 
+  <form hx-post="/contact-form">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Your name..">
 
@@ -28,8 +29,8 @@
       <input type="submit" value="Send Message">
     </div>
   </form>
+  <div class="result"></div>
 </div>
-
 </body>
 </html>
 
