@@ -13,17 +13,22 @@
   <form hx-post="/contact-form">
     <h1 class="header-text">Contact Me</h1>
     <p class="header-text">Fill up the form below to send a message.</p> 
+    
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Your name..">
+    <input type="text" id="name" name="name" placeholder="Your name.." required>
+    <div class="error" id="nameError"></div>
 
     <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="you@company.com">
+    <input type="text" id="email" name="email" placeholder="you@company.com" required>
+    <div class="error" id="emailError"></div>
 
     <label for="phonenumber">Phone Number</label>
-    <input type="text" id="phonenumber" name="phonenumber" placeholder="+44 20 7XXX XXXX">
+    <input type="text" id="phonenumber" name="phonenumber" placeholder="+44 20 7XXX XXXX" required>
+    <div class="error" id="phoneError"></div>
 
     <label for="message">Your Message</label>
-    <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+    <div class="error" id="messageError"></div>
 
     <div class="form-group center-button">
       <input type="submit" value="Send Message">
@@ -34,4 +39,3 @@
 
 </body>
 </html>
-

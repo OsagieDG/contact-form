@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	handlers "github.com/osag1e/contact-form/handler"
+	handlers "github.com/osag1e/contact-form/handlers"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
