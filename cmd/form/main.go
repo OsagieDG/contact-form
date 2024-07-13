@@ -25,15 +25,15 @@ func main() {
 
 	router.Handle("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("ui/static"))))
 
-	listenAddr := os.Getenv("HTTP_LISTEN_ADDRESS")
+	port := os.Getenv("PORT")
 
 	contactHandler := handlers.NewContactRequestHandler()
 
 	router.Get("/", contactHandler.ContactForm)
 	router.Post("/contact-form", contactHandler.HandleCreateContact)
 
-	fmt.Println("Server is running on :4000")
-	err := http.ListenAndServe(listenAddr, router)
+	fmt.Println("Server is running on :8080")
+	err := http.ListenAndServe(":"+port, router)
 	if err != nil {
 		log.Fatal("Error starting server: ", err)
 	}

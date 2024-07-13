@@ -9,4 +9,3 @@ lint:
 
 clean: 
 	@rm -rf bin
-
