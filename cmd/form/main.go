@@ -30,8 +30,7 @@ func main() {
 	contactHandler := handlers.NewContactRequestHandler()
 
 	router.Get("/", contactHandler.ContactForm)
-	router.Post("/contact-form", contactHandler.HandleCreateContact)
-
+	router.Post("/contact-form", contactHandler.HandleSendMessage)
 	fmt.Println("Server is running on :8080")
 	err := http.ListenAndServe(":"+port, router)
 	if err != nil {

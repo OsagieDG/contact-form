@@ -1,0 +1,10 @@
+[build]
+cmd = "go build -o bin/api cmd/form/main.go"
+bin = "bin/api"
+include_ext = ["go", "tmpl", "html", "css"]
+
+[run]
+cmd = "./bin/api"
+restart_on_rebuild = true
+watch_dir = ["."]
+

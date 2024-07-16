@@ -3,10 +3,11 @@
 
 
 ## Project environment variables
-- PORT=
-- SMTP_PASSWORD=
-- SMTP_FROM_EMAIL=
-
+```
+PORT=
+SMTP_PASSWORD=
+SMTP_FROM_EMAIL=
+```
 
 ![C Form](https://github.com/osag1e/contact-form/blob/main/images/fillin.png)
 
