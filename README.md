@@ -1,5 +1,5 @@
 # contact-form
-- Form URL: https://contact-xyvvdfiwua-ez.a.run.app/
+- Form URL: https://contact.osag1e.dev/
 
 
 ## Project environment variables

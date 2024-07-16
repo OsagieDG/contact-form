@@ -20,4 +20,4 @@ COPY . .
 RUN go build -o bin/api ./cmd/form
 
 # Set the entry point of the container to air
-CMD ["air", "-c", ".air.toml"]
+CMD ["sh", "-c", "source .env && air -c .air.toml"]
