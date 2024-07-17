@@ -13,6 +13,9 @@ COPY go.mod ./
 # Download the dependencies
 RUN go mod download
 
+# Copy the .env file to the container
+COPY .env .env
+
 # Copy the rest of the application code
 COPY . .
 
