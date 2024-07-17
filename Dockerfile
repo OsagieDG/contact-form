@@ -13,9 +13,6 @@ COPY go.mod ./
 # Download the dependencies
 RUN go mod download
 
-# Copy the .env file to the container
-COPY .env .env
-
 # Copy the rest of the application code
 COPY . .
 
@@ -23,4 +20,4 @@ COPY . .
 RUN go build -o bin/api ./cmd/form
 
 # Set the entry point of the container to air
-CMD ["sh", "-c", "source .env && air -c .air.toml"]
+CMD ["air", "-c", ".air.toml"]
