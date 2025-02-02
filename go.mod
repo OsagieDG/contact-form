@@ -1,4 +1,4 @@
-module github.com/osag1e/contact-form
+module github.com/OsagieDG/contact-form
 
 go 1.22
 

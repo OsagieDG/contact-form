@@ -1,5 +1,5 @@
 # contact-form
-- Form URL: https://contact.osag1e.dev/
+- Form URL: https://contact.osagiedg.me/
 
 
 ## Project environment variables
