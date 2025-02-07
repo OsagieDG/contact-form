@@ -4,8 +4,7 @@ import (
 	"net/http"
 )
 
-type ContactHandler struct {
-}
+type ContactHandler struct{}
 
 func NewContactRequestHandler() *ContactHandler {
 	return &ContactHandler{}
@@ -30,7 +29,6 @@ func (c *ContactHandler) HandleSendMessage(w http.ResponseWriter, r *http.Reques
 	go func() {
 		if err := sendEmail(name, email, phoneNumber, message); err != nil {
 			http.Error(w, "Failed to send email", http.StatusInternalServerError)
-
 		}
 	}()
 
@@ -38,7 +36,7 @@ func (c *ContactHandler) HandleSendMessage(w http.ResponseWriter, r *http.Reques
 	<h2>Thanks for reaching out!</h2>
 	<h1>Message has been sent successfully!</h1>
 	<h2>I will get back to you ASAP</h2>
-	<p><strong>Click <a href="https://osag1e.dev/">osag1e.dev</a> to return to the homepage</strong></p>
+	<p><strong>Click <a href="https://osagiedg.me/">osagiedg.me</a> to return to the homepage</strong></p>
 	`
 
 	if _, err := w.Write([]byte(htmlResponse)); err != nil {
